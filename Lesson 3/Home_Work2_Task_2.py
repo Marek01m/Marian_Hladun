@@ -8,5 +8,4 @@ print('Добуток: ', n1*n2*n3*n4)
 reverse_num='{3}{2}{1}{0}'.format(n1,n2,n3,n4)
 print('Реверсний порядок: ',reverse_num)
 
-#sort_list=[n1,n2,n3,n4]
 print("Посортований масив в порядку зростання: ",sorted(number))
