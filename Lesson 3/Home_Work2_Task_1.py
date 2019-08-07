@@ -20,3 +20,4 @@ Namespaces are one honking great idea -- let's do more of those!'''
 print('better quantity--->',zen.count('better'))
 print('never quantity--->',zen.count('never'))
 print('is quantity--->',zen.count('is'))
+print(zen.replace("i","&"))
