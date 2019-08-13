@@ -80,3 +80,9 @@
 # while i<10:
 #     float(a[i])
 #     i+=1
+ 
+
+# for j in [4, 5, 6, 1, 8]:
+#     print(j)
+# else:
+#     print(j, "- is the last")
