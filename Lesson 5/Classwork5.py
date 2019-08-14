@@ -36,10 +36,12 @@
 #######################
 #task 3
 
-n=int(input("Enter num "))
-n_list=list(range(1,n+1))
-k=1
+# n=int(input("Enter num "))
+# n_list=list(range(1,n+1))
+# k=1
 
-for i in n_list:
-    k*=i
-print("!k=",k)
+# for i in n_list:
+#     k*=i
+# print("!k=",k)
+
+
