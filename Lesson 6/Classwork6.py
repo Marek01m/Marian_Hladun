@@ -1,4 +1,5 @@
-#Task1
+#########################################################################
+#Task1#
 
 # def do_ser_ar(*args):
 #     x=0
@@ -7,35 +8,44 @@
 #         ser=i+x/len(args)
 #     return  ser   
 
-#print(do_ser_ar.__doc_)
-# print(ser_ar(2,2,2))
+#def arithmetic_mean(*args):
+#     """ This function calculates the arithmetic mean of a non-empty
+#         arbitrary number of numerical values """
+#     return sum(args) / len(args)
 
-##############################################
-#Task 2
-# def module(x):
+#print(do_ser_ar(2,2,2))
+
+#print(arithmetic_mean(45,32,89,78))
+# print(arithmetic_mean(8989.8,78787.78,3453,78778.73))
+# print(arithmetic_mean(45,32))
+# print(arithmetic_mean(45))
+# print(arithmetic_mean.doc)
+
+#########################################################################
+#Task 2#
+
+# def module(num):
 #     if num >= 0:
-#         return numb
+#         return num
 #     else 
 #         return -num    
-
 
 
 # def do_module(x):
 # if x>=0:
 #     return x
 # else:
-#     return str(x)[1:]
-#     
+#     return str(x)[1:]   
 
 # print(do_module(-5))
 
-#####################
-#Task 3
+#########################################################################
+#Task 3#
 
 # def max_from2 (a,b):
 #     """This func returns max number from two"""
-# a=int(a)
-# b=int(b)
+#     a=int(a)
+#     b=int(b)
 #     if a>b:
 #         return "a is max"
 #     elif a==b:
@@ -45,37 +55,61 @@
 
 # print(max_from2(5,7))        
 
-####################
-#Task 4
-
+#########################################################################
+#Task 4#
 
 # def sq_rectangle(l,h):  #дописати 1\2 на основу і пл прям
 #     return l*h
 
-# def sq_straight_triangle(a,h,f=0.5):
+# def sq_triangle(a,h,f=0.5):
 #     return a*h*f
 
 # def sq_circle(r,PI=3.14):
 #     return r**2    
 
-# choice=input("Choose 1-rectangle, 2-stright triangle, 3-circle")
+# choice=input("Choose 1-rectangle, 2-triangle, 3-circle: ")
 # if choice=='1':
-#     length=input("Length: ")
-#     height=input("Height: ")
+#     length=input("a: ")
+#     height=input("b: ")
 #     print(sq_rectangle(length,height))
 # elif choice=='2':
-#     katet=input("katet: ")
-#     height=input("Height: ")
-#     print(sq_straight_triangle(katet,height))
+#     storona=input("c: ")
+#     height=input("h(c): ")
+#     print(sq_straight_triangle(storona,height))
 # elif choice=="3":
-#     radius=input("Radius: ")
+#     radius=input("r: ")
 #     print(sq_circle(radius))
 # else:
 #    print("Input Error")
 
-####################
-#Task 5
 
+# def rectangle():
+#     a = float(input("Input width: "))
+#     b = float(input("Input height: "))
+#     print("Square={}".format(a*b))
+ 
+# def triangle():
+#     a = float(input("Input basis: "))
+#     h = float(input("Input height: "))
+#     print("Area={}".format(0.5 * a * h))
+ 
+# def circle():
+#     PI=3.14
+#     r = float(input("Input radius: "))
+#     print("Square={}".format(PI * r**2))
+
+# figure = input("1-rectangle, 2-triangle, 3-circle: ")
+# if figure == '1':
+#   rectangle()
+# elif figure == '2':
+#   triangle()
+# elif figure == '3':
+#   circle()
+# else:
+#   print("Input error")
+
+########################################################################
+# Task 5#
 
 # def do_sum(x):
 #     sum=0
@@ -85,27 +119,59 @@
 
 # print(do_sum('678'))    
 
+#########################################################################     
+#Task 6#                           
+from decimal import Decimal
 
+def sum(a,b):
+    return a+b
 
-########################            #константа python
-#Task 6                           
+def sub(a,b):
+    return a-b
 
-def calculator():
-    a=input("Enter ur number1: ")
-    symb=input("Enter act symb: ")
-    b=input("Enter ur number2: ")
-    a=int(a)
-    b=int(b)
-    symb=str(symb)
-    def plus(a,b):
-        return a+b
-    def minus(a,b):
-        return a-b
-    def zirochka(a,b):
-        return a*b
-    def slash(a,b):
-        return a/b   
-    if symb=="+":
-        print(plus(a,b))
+def multi(a,b):
+    return a*b
 
-        
+def dev(a,b):
+    if b==0:
+        return print("Cannot devide by zero")
+    else:
+        return a/b
+
+def calc():
+    running=input("Запустити калькулятор? Y/N ").lower()
+    while running=='y':
+
+        choice=input("Виберіть дію: + - * /: ")
+        first_num=Decimal(input("Введіть переше число: "))
+        second_num=Decimal(input("Введіть друге число: "))
+
+        if choice=="+":
+            print("{0}{2}{1}={3}".format(first_num,second_num,choice,sum(first_num,second_num)))
+            running=input("Бажаєте продовжити? Y/N ").lower()
+        elif choice=="-":
+            print("{0}{2}{1}={3}".format(first_num,second_num,choice,sub(first_num,second_num)))
+            running=input("Бажаєте продовжити? Y/N ").lower()
+        elif choice=="*":
+            print("{0}{2}{1}={3}".format(first_num,second_num,choice,multi(first_num,second_num)))
+            running=input("Бажаєте продовжити? Y/N ").lower()    
+        elif choice=="/":
+            print("{0}{2}{1}={3}".format(first_num,second_num,choice,dev(first_num,second_num)))
+            running=input("Бажаєте продовжити? Y/N ").lower()
+        else:
+            print("Choose correct symbol!")
+            running=input("Бажаєте продовжити? Y/N ").lower()
+
+calc()
+
+#########################################################################
+#Task 7#
+
+#########################################################################
+#Task 8#
+
+# def d(a,b,c):
+#     return b**2-4*a*c
+
+#########################################################################
+#*END*#
