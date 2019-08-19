@@ -121,51 +121,68 @@
 
 #########################################################################     
 #Task 6#                           
-from decimal import Decimal
 
-def sum(a,b):
-    return a+b
+# from decimal import Decimal
 
-def sub(a,b):
-    return a-b
+# def sum(a,b):
+#     return a+b
 
-def multi(a,b):
-    return a*b
+# def sub(a,b):
+#     return a-b
 
-def dev(a,b):
-    if b==0:
-        return print("Cannot devide by zero")
-    else:
-        return a/b
+# def multi(a,b):
+#     return a*b
 
-def calc():
-    running=input("Запустити калькулятор? Y/N ").lower()
-    while running=='y':
+# def dev(a,b):
+#     if b==0:
+#         return print("Cannot devide by zero")
+#     else:
+#         return a/b
 
-        choice=input("Виберіть дію: + - * /: ")
-        first_num=Decimal(input("Введіть переше число: "))
-        second_num=Decimal(input("Введіть друге число: "))
+# def calc():
+#     running=input("Запустити калькулятор? Y/N ").lower()
+#     while running=='y':
 
-        if choice=="+":
-            print("{0}{2}{1}={3}".format(first_num,second_num,choice,sum(first_num,second_num)))
-            running=input("Бажаєте продовжити? Y/N ").lower()
-        elif choice=="-":
-            print("{0}{2}{1}={3}".format(first_num,second_num,choice,sub(first_num,second_num)))
-            running=input("Бажаєте продовжити? Y/N ").lower()
-        elif choice=="*":
-            print("{0}{2}{1}={3}".format(first_num,second_num,choice,multi(first_num,second_num)))
-            running=input("Бажаєте продовжити? Y/N ").lower()    
-        elif choice=="/":
-            print("{0}{2}{1}={3}".format(first_num,second_num,choice,dev(first_num,second_num)))
-            running=input("Бажаєте продовжити? Y/N ").lower()
-        else:
-            print("Choose correct symbol!")
-            running=input("Бажаєте продовжити? Y/N ").lower()
+#         choice=input("Виберіть дію: + - * /: ")
+#         first_num=Decimal(input("Введіть переше число: "))
+#         second_num=Decimal(input("Введіть друге число: "))
 
-calc()
+#         if choice=="+":
+#             print("{0}{2}{1}={3}".format(first_num,second_num,choice,sum(first_num,second_num)))
+#             running=input("Бажаєте продовжити? Y/N ").lower()
+#         elif choice=="-":
+#             print("{0}{2}{1}={3}".format(first_num,second_num,choice,sub(first_num,second_num)))
+#             running=input("Бажаєте продовжити? Y/N ").lower()
+#         elif choice=="*":
+#             print("{0}{2}{1}={3}".format(first_num,second_num,choice,multi(first_num,second_num)))
+#             running=input("Бажаєте продовжити? Y/N ").lower()    
+#         elif choice=="/":
+#             print("{0}{2}{1}={3}".format(first_num,second_num,choice,dev(first_num,second_num)))
+#             running=input("Бажаєте продовжити? Y/N ").lower()
+#         else:
+#             print("Choose correct symbol!")
+#             running=input("Бажаєте продовжити? Y/N ").lower()
+
+# calc()
 
 #########################################################################
 #Task 7#
+def fib_r(n):  
+    return n if n<=1 else (fib_r(n-1)+fib_r(n-2))
+   
+quantity_of_fibs = int(input("How many fibonacci? "))  
+
+if quantity_of_fibs <= 0:  
+   print("Plese enter a positive integer", end=" ")  
+else:  
+   print("Fibonacci sequence:",end=" ")
+   fib_list=[fib_r(i) for i in range(quantity_of_fibs)]
+   print(fib_list)  
+   
+   
+# for i in range(quantity_of_fibs):  
+#    print(fib_r(i))  
+
 
 #########################################################################
 #Task 8#
