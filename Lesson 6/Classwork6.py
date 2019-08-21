@@ -143,9 +143,9 @@
 #     running=input("Запустити калькулятор? Y/N ").lower()
 #     while running=='y':
 
-#         choice=input("Виберіть дію: + - * /: ")
-#         first_num=Decimal(input("Введіть переше число: "))
-#         second_num=Decimal(input("Введіть друге число: "))
+#        choice=input("Виберіть дію: + - * /: ")
+#        first_num=Decimal(input("Введіть переше число: "))
+#        second_num=Decimal(input("Введіть друге число: "))
 
 #         if choice=="+":
 #             print("{0}{2}{1}={3}".format(first_num,second_num,choice,sum(first_num,second_num)))
@@ -162,6 +162,9 @@
 #         else:
 #             print("Choose correct symbol!")
 #             running=input("Бажаєте продовжити? Y/N ").lower()
+#     else:
+#        print("Thank you for choosing our product!")
+
 
 # calc()
 
