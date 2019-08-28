@@ -35,7 +35,7 @@ while run:
     if keys[pygame.K_DOWN]:
         y=y+vol
 
-    color=(randint(0,256),randint(0,256),randint(0,256))
+    color=(randint(0,255),randint(0,255),randint(0,255))
     # color=([randint(0,256),randint(0,256),randint(0,256)])
     #without trace
     # screen.fill((0,0,0))          
