@@ -1,3 +1,104 @@
+#PyGame***Homework#
+
+#_______________________________________________________________________________________________________________
+#image moving without tracing
+
+import pygame
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+pygame.init()
+ 
+gameDisplay = pygame.display.set_mode([800, 600])
+pygame.display.set_caption('hw1')
+ 
+clock = pygame.time.Clock()
+
+pygame.display.update()
+background_position = [0, 0]
+ 
+#background_image = pygame.image.load("saturn_family1.jpg").convert()
+player_image = pygame.image.load(r"C:\Users\Admin\Desktop\Marian_Hladun\Lesson 8\alien.png").convert()
+
+player_image.set_colorkey(WHITE)
+ 
+done = False
+ 
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True            
+ 
+    # Get the current mouse position. This returns the position as a list of two numbers.
+    #повертає поточну позицію мишки на екрані
+    player_position = pygame.mouse.get_pos()
+    x = player_position[0]
+    y = player_position[1]
+ 
+  
+    gameDisplay.blit(player_image, [x, y])
+    pygame.display.update()
+    gameDisplay.fill(BLACK)
+    clock.tick(60)
+
+
+pygame.quit()
+
+#_______________________________________________________________________________________________________________
+#Ball moving from left to right stopless
+
+import pygame
+ 
+FPS = 60
+W_H = [800,300]
+WHITE = (255, 255, 255)
+BLUE = (120, 150, 200)
+RIGHT = "to the right"
+LEFT = "to the left"
+STOP = "stop"
+ 
+pygame.init()
+gameDisplay = pygame.display.set_mode(W_H)
+pygame.display.set_caption('Ball movin`')
+clock = pygame.time.Clock()
+x = W_H[0] // 2
+y = W_H[1] // 2
+r = 50
+ 
+motion = STOP
+ 
+while 1:
+    gameDisplay.fill(WHITE)
+ 
+    pygame.draw.circle(gameDisplay, BLUE, (x, y), r)
+ 
+    pygame.display.update()
+ 
+    for i in pygame.event.get():
+        if i.type == pygame.QUIT:
+            exit()
+        elif i.type == pygame.KEYDOWN:
+            if i.key == pygame.K_LEFT:
+                motion = LEFT
+            elif i.key == pygame.K_RIGHT:
+                motion = RIGHT
+        elif i.type == pygame.KEYUP:
+            if i.key in [pygame.K_LEFT, pygame.K_RIGHT]:
+                motion = STOP
+    if x-r > W_H[0]:
+        x = -r
+    elif x+r < 0:
+        x = W_H[0] + r
+    if motion == LEFT:
+        x -= 5
+    elif motion == RIGHT:
+        x += 5
+    
+ 
+    clock.tick(FPS)
+
+#PyGame***Homework#
+
 #########################################################################
 #PyGame#Оранжеве вікно
 
@@ -45,7 +146,7 @@
 #   clock.tick(60)
 
 #########################################################################
-#PyGame#Event printing
+#PyGame#Тест прінат івентів
 
 # import pygame
 
@@ -245,46 +346,46 @@
 #########################################################################
 #PyGame#Homework image moving without tracing
 
-import pygame
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+# import pygame
+# WHITE = (255, 255, 255)
+# BLACK = (0, 0, 0)
 
-pygame.init()
+# pygame.init()
  
-gameDisplay = pygame.display.set_mode([800, 600])
-pygame.display.set_caption('hw1')
+# gameDisplay = pygame.display.set_mode([800, 600])
+# pygame.display.set_caption('hw1')
  
-clock = pygame.time.Clock()
+# clock = pygame.time.Clock()
 
-pygame.display.update()
-background_position = [0, 0]
+# pygame.display.update()
+# background_position = [0, 0]
  
-#background_image = pygame.image.load("saturn_family1.jpg").convert()
-player_image = pygame.image.load(r"C:\Users\Admin\Desktop\Marian_Hladun\Lesson 8\alien.png").convert()
+# #background_image = pygame.image.load("saturn_family1.jpg").convert()
+# player_image = pygame.image.load(r"C:\Users\Admin\Desktop\Marian_Hladun\Lesson 8\alien.png").convert()
 
-player_image.set_colorkey(WHITE)
+# player_image.set_colorkey(WHITE)
  
-done = False
+# done = False
  
-while not done:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            done = True            
+# while not done:
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             done = True            
  
-    # Get the current mouse position. This returns the position as a list of two numbers.
-    #повертає поточну позицію мишки на екрані
-    player_position = pygame.mouse.get_pos()
-    x = player_position[0]
-    y = player_position[1]
+#     # Get the current mouse position. This returns the position as a list of two numbers.
+#     #повертає поточну позицію мишки на екрані
+#     player_position = pygame.mouse.get_pos()
+#     x = player_position[0]
+#     y = player_position[1]
  
   
-    gameDisplay.blit(player_image, [x, y])
-    pygame.display.update()
-    gameDisplay.fill(BLACK)
-    clock.tick(60)
+#     gameDisplay.blit(player_image, [x, y])
+#     pygame.display.update()
+#     gameDisplay.fill(BLACK)
+#     clock.tick(60)
 
 
-pygame.quit()
+# pygame.quit()
 
 
 #########################################################################
@@ -379,55 +480,55 @@ pygame.quit()
 #########################################################################
 #PyGame#Homework Ball moving from left to right stopless
 
-import pygame
+# import pygame
  
-FPS = 60
-W_H = [800,300]
-WHITE = (255, 255, 255)
-BLUE = (120, 150, 200)
-RIGHT = "to the right"
-LEFT = "to the left"
-STOP = "stop"
+# FPS = 60
+# W_H = [800,300]
+# WHITE = (255, 255, 255)
+# BLUE = (120, 150, 200)
+# RIGHT = "to the right"
+# LEFT = "to the left"
+# STOP = "stop"
  
-pygame.init()
-gameDisplay = pygame.display.set_mode(W_H)
-pygame.display.set_caption('Ball movin`')
-clock = pygame.time.Clock()
-x = W_H[0] // 2
-y = W_H[1] // 2
-r = 50
+# pygame.init()
+# gameDisplay = pygame.display.set_mode(W_H)
+# pygame.display.set_caption('Ball movin`')
+# clock = pygame.time.Clock()
+# x = W_H[0] // 2
+# y = W_H[1] // 2
+# r = 50
  
-motion = STOP
+# motion = STOP
  
-while 1:
-    gameDisplay.fill(WHITE)
+# while 1:
+#     gameDisplay.fill(WHITE)
  
-    pygame.draw.circle(gameDisplay, BLUE, (x, y), r)
+#     pygame.draw.circle(gameDisplay, BLUE, (x, y), r)
  
-    pygame.display.update()
+#     pygame.display.update()
  
-    for i in pygame.event.get():
-        if i.type == pygame.QUIT:
-            exit()
-        elif i.type == pygame.KEYDOWN:
-            if i.key == pygame.K_LEFT:
-                motion = LEFT
-            elif i.key == pygame.K_RIGHT:
-                motion = RIGHT
-        elif i.type == pygame.KEYUP:
-            if i.key in [pygame.K_LEFT, pygame.K_RIGHT]:
-                motion = STOP
-    if x-r > W_H[0]:
-        x = -r
-    elif x+r < 0:
-        x = W_H[0] + r
-    if motion == LEFT:
-        x -= 5
-    elif motion == RIGHT:
-        x += 5
+#     for i in pygame.event.get():
+#         if i.type == pygame.QUIT:
+#             exit()
+#         elif i.type == pygame.KEYDOWN:
+#             if i.key == pygame.K_LEFT:
+#                 motion = LEFT
+#             elif i.key == pygame.K_RIGHT:
+#                 motion = RIGHT
+#         elif i.type == pygame.KEYUP:
+#             if i.key in [pygame.K_LEFT, pygame.K_RIGHT]:
+#                 motion = STOP
+#     if x-r > W_H[0]:
+#         x = -r
+#     elif x+r < 0:
+#         x = W_H[0] + r
+#     if motion == LEFT:
+#         x -= 5
+#     elif motion == RIGHT:
+#         x += 5
     
  
-    clock.tick(FPS)
+#     clock.tick(FPS)
 
 #########################################################################
 #PyGame#
