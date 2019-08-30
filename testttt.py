@@ -3,7 +3,7 @@
 from random import randint
 import pygame
 pygame.init()
-screen = pygame.display.set_mode((500,500))
+screen = pygame.display.set_mode((1200,600))
 pygame.display.set_caption("My first game")
 #clock = pygame.time.Clock()
 
