@@ -1,5 +1,23 @@
 #Task1#
 
+# class NegNumError:
+#     pass
+# try:
+#     num=int(input("Введіть ціле число "))
+#     if num%2==0:
+#         print(num,"-ПАРНЕ")
+#     elif num<0:
+#         raise NegNumError("Only positive num")   
+#     else:
+#         print(num,"-НЕПАРНЕ")
+       
+# except ValueError:
+#     print("error!Only integer!")
+# except NegNumError:
+#     print("Only pos num")
+
+#____________________________________________________________________
+
 # n = input("Input entire number: ")
 # while type(n) != int:
 #     try:
