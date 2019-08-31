@@ -71,3 +71,19 @@ while run:
 #     pygame.draw.aaline(screen, WHITE, [10, 70], [290, 55])
    
 #     pygame.display.update()
+
+#######################################################################################
+
+
+# class Animal:
+#     def __init__(self,type_a,sound,color):
+#         self.t=type_a
+#         self.s=sound
+#         self.c=color
+    
+#     def animal_info(self):
+#         print("Animal type is {}, its sound is {}, its color is {}".format(self.t,self.s,self.c))
+
+# an=Animal("cow","mooo","black n white")
+
+# an.animal_info()
