@@ -26,10 +26,10 @@ class CurrencyConverter:
 
     def convert(self,amount,from_currency,to_currency,output):
 
-        try:             #1 eur to uah
-            float(amount)
-        except:
-            amount=1.0
+        # try:             #1 eur to uah
+        #     float(amount)
+        # except:
+        #     amount=1.0
 
         # initial_amount=amount
         if from_currency != "USD":
@@ -107,15 +107,17 @@ if __name__ == "__main__":
     from_currency_option.place(relx=0.5, rely=0.2, relheight=0.1)
     to_currency_option.place(relx=0.5, rely=0.35, relheight=0.1)
     
-    convert_button=tk.Button(main_frame,text = "Convert",font=("Unispace", 16), bg = "red", fg = "black",cursor='exchange',command = converter.convert(amount1_field.get(), variable1.get(), variable2.get(),amount2_field))#command=converter.convert(amount1_field.get(), "EUR", "UAH",amount2_field) )#,command = converter.convert(amount1_field.get(), variable1.get(), variable2.get(),amount2_field))#KeyError
+    convert_button=tk.Button(main_frame,text = "Convert",font=("Unispace", 16), bg = "red", fg = "black",cursor='exchange',command=converter.convert(amount1_field.get(), "EUR", "UAH",amount2_field) )#,command = converter.convert(amount1_field.get(), variable1.get(), variable2.get(),amount2_field))#KeyError
     convert_button.place(relx=0.7, rely=0.7, relheight=0.1)
+
+    
         
     clear_button=tk.Button(main_frame,text = "Clear",font=("Unispace", 16), bg = "red", fg = "black",cursor='target', command = clear_all)
     clear_button.place(relx=0.52, rely=0.7, relheight=0.1)
      
     
     root.mainloop()
-
+    print(type(amount1_field.get())
 
 
 
